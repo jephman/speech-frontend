@@ -12,14 +12,14 @@ function compileProvider ($compileProvider) {
 
 function tokenChecker($rootScope, $state, $window, AUTH_EVENTS, AuthService, navToolbarService, Session) {
 	'ngInject';
-	if(!AuthService.isAuthenticated() && $window.localStorage.token != null) {
-		navToolbarService.userProfile().then(function (data) {
-			Session.create(data.token, data.user.id,data.user.role);
-			stateChangeCatch();
-		});
-	}else {
-		stateChangeCatch();
-	}
+	// if(!AuthService.isAuthenticated() && $window.localStorage.token != null) {
+	// 	navToolbarService.userProfile().then(function (data) {
+	// 		Session.create(data.token, data.user.id,data.user.role);
+	// 		stateChangeCatch();
+	// 	});
+	// }else {
+				stateChangeCatch();
+	// }
 	function stateChangeCatch () {
 		$rootScope.$on("$stateChangeStart", function(event, next, toParams ,current) {	
 			var authorizedRoles = next.hasOwnProperty('data') ? next.data.authorizedRoles : null;

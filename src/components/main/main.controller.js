@@ -6,11 +6,11 @@ function mainController($window, $scope, USER_ROLES, AuthService, $mdSidenav, $t
   $scope.userRoles = USER_ROLES;
   $scope.isAuthorized = AuthService.isAuthorized;
 
-  vm.updateUserDialog = function(ev) {
-    navToolbarService.userProfile().then(userInfo => {
-      userDialogProvider.updateLimitUserDialog(ev, userInfo.user);
-    });
-  };
+  // vm.updateUserDialog = function(ev) {
+  //   navToolbarService.userProfile().then(userInfo => {
+  //     userDialogProvider.updateLimitUserDialog(ev, userInfo.user);
+  //   });
+  // };
 
   vm.__BRANCH = __BRANCH;
   vm.__DATE = __DATE;

@@ -13,9 +13,6 @@ function mainState($stateProvider, $urlRouterProvider) {
 				templateUrl : mainTemplate,
 				controller  : "mainController",
 				controllerAs: 'vm',
-				// resolve     : {
-				// 	userLoggedIn
-				// }
 			},
 			'nav-toolbar@main': { 
 				templateUrl : navTemplate
@@ -24,11 +21,5 @@ function mainState($stateProvider, $urlRouterProvider) {
   });
 	$urlRouterProvider.otherwise('/404');
 }
-
-
-// function userLoggedIn(navToolbarService) {
-// 	'ngInject';
-//  	return navToolbarService.userProfile();
-// }
 
 export default mainState;
