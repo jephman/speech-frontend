@@ -8,12 +8,11 @@ import ngSpinner from 'angular-spinners';
 import ngSanitize from 'angular-sanitize';
 import ngDataTable from 'angular-material-data-table';
 import loadingBar from 'angular-loading-bar';
-// import ngTimePicker from 'angular-material-time-picker';
+
 import 'angular-ui-router';
 import 'angular-ui-router.statehelper';
 
 //vendor css
-// import 'angular-material-time-picker/dist/md-time-picker.css';
 import '../node_modules/angular-loading-bar/src/loading-bar.css';
 import '../node_modules/angular-material-data-table/dist/md-data-table.css';
 import '../node_modules/angular-material/angular-material.css';
