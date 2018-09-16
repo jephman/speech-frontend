@@ -1,0 +1,33 @@
+<!-- <div class="custom-require-login-overlay"></div>
+  <div class="custom-require-login"> -->
+  <section flex layout="column" layout-align="center center">
+    <md-content class="panel-clr" md-whiteframe="5">
+      <md-toolbar  class="md-primary" layout="row" layout-align="center center">
+        <h6>Session End, Please Login to continue</h6>
+      </md-toolbar >
+      <md-content class="panel-content">
+        <form ng-submit="login(credentials)" ng-cloak>
+          <div layout="column" layout-align="center center">
+            <md-input-container class="md-block">
+              <label>Username</label>
+              <input ng-model="credentials.username" type="text" autocomplete="off" autofocus>
+            </md-input-container>
+            <md-input-container class="md-block">
+              <label>Password</label>
+              <input ng-model="credentials.password" type="password" autocomplete="off">
+            </md-input-container>
+            <div layout="row" layout-align="center center">
+              <md-button type="submit" class="md-raised md-primary" ng-disabled="disable" layout="row" layout-align="center center">
+                <span ng-hide="loading">Login</span>
+                <md-progress-circular class="md-accent md-hue-1 center" md-diameter="20px" md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+              </md-button>
+              <md-button class="md-raised md-primary" ng-click="logout()" ng-disabled="disable">
+                Logout
+              </md-button>
+            </div>
+          </div>
+        </form>
+      </md-content>
+    </md-content>
+  </section>
+<!-- </div> -->

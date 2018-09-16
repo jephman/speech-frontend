@@ -1,0 +1,13 @@
+.DS_Store
+.tmp
+.git
+node_modules
+.settings
+*.log
+dist/
+*.DS_Store
+**/.DS_Store
+*.vscode
+**/.vscode
+*.history
+**/.history

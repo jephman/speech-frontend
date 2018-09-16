@@ -1,0 +1,65 @@
+<md-button class="md-primary md-raised" ng-click="vm.addUserDialog($event)" >
+    Add User
+</md-button>
+<section flex layout="row" layout-align="center">
+    <md-input-container flex=60 md-no-float class="md-block default-search-container">
+        <input ng-model="vm.searchKeyword" type="text" placeholder="Search">
+    </md-input-container>
+</section>
+<section layout-wrap layout="row" layout-align="center">
+    <md-card 
+    ng-class="{'user-disabled': user.status == 0, 'user-enabled' : user.status == 1}"
+    ng-repeat="user in vm.userList | filter: vm.searchKeyword" 
+    md-whiteframe="{{(user.status == 1) ? 6 : -1}}">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">
+                    {{user.name}}
+                </span>
+                <span class="md-subhead">
+                    {{user.username}}
+                </span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-actions layout="row" layout-align="end center">
+            <md-button 
+            class="md-raised"
+            ng-disabled="vm.disabled[$index]"
+            ng-if="user.status == 1" 
+            ng-click="vm.disableUser(user.id, $index)" layout="column" layout="center center">
+                <span ng-hide="vm.loading[$index]">Disable</span>
+                <span class="progress-button">
+                    <md-progress-circular 
+                    class="md-accent md-hue-1" 
+                    md-diameter="20px" 
+                    md-mode="indeterminate" 
+                    ng-show="vm.loading[$index]"></md-progress-circular>
+                </span>
+            </md-button>
+            <md-button 
+            class="md-raised"
+            ng-disabled="vm.disabled[$index]"
+            ng-if="user.status == 0" 
+            ng-click="vm.enableUser(user.id, $index)"  layout="column" layout="center center">
+                <span ng-hide="vm.loading[$index]">Enable</span>
+                <span class="progress-button">
+                    <md-progress-circular 
+                    class="md-accent md-hue-1" 
+                    md-diameter="20px" 
+                    md-mode="indeterminate" 
+                    ng-show="vm.loading[$index]"></md-progress-circular>
+                </span>
+            </md-button>
+            <md-button 
+            class="md-raised"
+            ng-disabled="vm.disabled[$index]"
+            ng-click="vm.updateUserDialog($event, user)">Edit</md-button>
+            <md-button
+            class="md-raised"
+            ng-disabled="vm.disabled[$index]"
+            ng-click="vm.deleleUserDialog($event, user.id, $index)"
+            >Delete
+            </md-button>
+        </md-card-actions>
+    </md-card>
+</section>

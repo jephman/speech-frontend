@@ -1,0 +1,22 @@
+<section flex layout="column" layout-align="center center">
+  <md-content class="panel-clr" md-whiteframe="5">
+    <md-toolbar  class="md-primary" layout="row" layout-align="center center">
+      <h2>Sign in</h2>
+    </md-toolbar >
+    <md-content class="panel-content">
+      <form ng-submit="vm.login(credentials)" ng-cloak>
+        <div layout="column" layout-align="center center">
+          <md-input-container class="md-block">
+            <label>Username</label>
+            <input ng-model="credentials.username" type="text" autocomplete="off" autofocus>
+          </md-input-container>
+          <md-input-container class="md-block">
+            <label>Password</label>
+            <input ng-model="credentials.password" type="password" autocomplete="off">
+          </md-input-container>
+          <md-button type="submit" class="md-raised md-primary">Log in</md-button>
+        </div>
+      </form>
+    </md-content>
+  </md-content>
+</section>

@@ -1,0 +1,96 @@
+<md-dialog class="medium_dialog" aria-label="add user">
+  <form ng-cloak name="updateUserForm" ng-submit="vm.updateUser(vm.user, updateUserForm)">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Update User</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="vm.cancel()">
+          <md-icon md-svg-src="navigation:w:close" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content" layout="column">
+        <div flex layout="row">
+          <md-input-container flex>
+              <label>User Name</label>
+              <input name="username" ng-value="vm.user.username" ng-disabled="true">
+              <div class="errors" ng-messages="updateUserForm.username.$error">
+                  <div ng-message="required">Required</div>
+              </div>
+          </md-input-container>  
+          <md-input-container flex>
+              <label>Name</label>
+              <input name="name" ng-model="vm.user.name">
+              <div class="errors" ng-messages="updateUserForm.name.$error">
+                  <div ng-message="required">Required</div>
+              </div>
+          </md-input-container>  
+        </div>
+        <div flex layout="row">
+            <md-input-container flex>
+                <label>Role</label>
+                <md-select name="role" ng-model="vm.user.role">
+                  <md-option ng-value="'admin'">
+                    Admin
+                  </md-option>
+                  <md-option ng-value="'manager'">
+                    Manager
+                  </md-option>
+                  <md-option ng-value="'user'">
+                    User
+                  </md-option>
+                  <md-option ng-value="'guest'">
+                    Guest
+                  </md-option>
+                </md-select>
+                <div class="errors" ng-messages="updateUserForm.role.$error">
+                    <div ng-message="required">Required</div>
+                </div>
+            </md-input-container>
+        </div>
+        <div flex>
+          <md-input-container flex>
+            <md-checkbox ng-model="vm.user.change_password" aria-label="change_password">
+              Change Password
+            </md-checkbox>
+          </md-input-container> 
+        </div>
+        <div flex layout="row" ng-if="vm.user.change_password">
+          <md-input-container flex>
+              <label>Password</label>
+              <input type="password" name="password" ng-model="vm.user.password" minlength="4">
+              <div class="errors" ng-messages="updateUserForm.password.$error">
+                  <div ng-message="required">Required</div>
+              </div>
+          </md-input-container>
+          <md-input-container flex>
+              <label>Confirm Password</label>
+              <input 
+              type="password"
+              name="password_confirm" 
+              ng-model="password_confirm" 
+              compare-to="vm.user.password"
+              ng-required="(vm.user.password.length>3)"
+              ng-disabled="!(vm.user.password.length>3)"
+              >
+              <div class="errors" ng-messages="updateUserForm.password_confirm.$error">
+                <div ng-message="required">Required</div>
+                <div ng-message="compareTo">Password Must Match</div>
+              </div>
+          </md-input-container>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="vm.cancel()">
+        Cancel
+      </md-button>
+      <md-button type="submit" ng-disabled="updateUserForm.$pristine || updateUserForm.$invalid">
+        Save
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

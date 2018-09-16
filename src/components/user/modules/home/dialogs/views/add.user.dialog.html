@@ -1,0 +1,88 @@
+<md-dialog class="medium_dialog" aria-label="add user">
+  <form ng-cloak name="addUserForm" ng-submit="vm.addUser(formData, addUserForm)">
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add User</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="vm.cancel()">
+          <md-icon md-svg-src="navigation:w:close" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+    <md-dialog-content>
+      <div class="md-dialog-content" layout="column">
+        <div flex layout="row">
+          <md-input-container flex>
+              <label>User Name</label>
+              <input name="username" ng-model="formData.username" ng-required="true">
+              <div class="errors" ng-messages="addUserForm.username.$error">
+                  <div ng-message="required">Required</div>
+              </div>
+          </md-input-container>  
+          <md-input-container flex>
+              <label>Name</label>
+              <input name="name" ng-model="formData.name" ng-required="false">
+              <div class="errors" ng-messages="addUserForm.name.$error">
+                  <div ng-message="required">Required</div>
+              </div>
+          </md-input-container>  
+        </div>
+        <div flex layout="row">
+          <md-input-container flex>
+              <label>Password</label>
+              <input type="password" name="password" ng-model="formData.password" ng-required="true">
+              <div class="errors" ng-messages="addUserForm.password.$error">
+                  <div ng-message="required">Required</div>
+              </div>
+          </md-input-container>
+          <md-input-container flex>
+              <label>Confirm Password</label>
+              <input 
+              type="password"
+              name="password_confirm" 
+              ng-model="password_confirm" 
+              compare-to="formData.password"
+              ng-required="true"
+              >
+              <div class="errors" ng-messages="addUserForm.password_confirm.$error">
+                <div ng-message="required">Required</div>
+                <div ng-message="compareTo">Password Must Match</div>
+              </div>
+          </md-input-container>
+        </div>
+        <div layout="row">
+            <md-input-container flex>
+                <label>Role</label>
+                <md-select name="role" ng-model="formData.role" ng-required="true">
+                  <md-option ng-value="'admin'">
+                    Admin
+                  </md-option>
+                  <md-option ng-value="'manager'">
+                    Manager
+                  </md-option>
+                  <md-option ng-value="'user'">
+                    User
+                  </md-option>
+                  <md-option ng-value="'guest'">
+                    Guest
+                  </md-option>
+                </md-select>
+                <div class="errors" ng-messages="addUserForm.role.$error">
+                    <div ng-message="required">Required</div>
+                </div>
+            </md-input-container>
+        </div>
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="vm.cancel()">
+        Cancel
+      </md-button>
+      <md-button type="submit" ng-disabled="addUserForm.$pristine || addUserForm.$invalid">
+        Save
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

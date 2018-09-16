@@ -1,0 +1,186 @@
+/* .vertical-tabs md-tabs-wrapper {  */
+  /* position: fixed;
+  width: 150px;
+  height: 100%;
+  z-index: 2;
+  background-color: white; */
+/* } */
+
+/* .vertical-tabs md-tabs-wrapper md-tabs-canvas{ */
+  /* height: 100%; */
+/* } */
+/* .vertical-tabs md-tabs-wrapper md-pagination-wrapper{ */
+  /* display: block; */
+/* } */
+/* .vertical-tabs md-tabs-wrapper md-pagination-wrapper  md-tab-item{ */
+  /* width: 100%; */
+/* } */
+
+/* .vertical-tabs md-tabs-content-wrapper { */
+  /* width: calc(100% - 150px);
+  right: 0;
+  top: 0;
+  left: auto; */
+/* } */
+
+/* .vertical-tabs md-tabs-content-wrapper md-tab-content{
+  overflow: initial;
+}
+.vertical-tabs md-tabs-content-wrapper md-tab-content.md-active > div{
+  overflow: auto;
+} */
+
+
+md-dialog.force-fullscreen._md.md-dialog-fullscreen{
+  min-height: 100%;
+  min-width: 100%;
+  border-radius: 0;
+}
+
+md-dialog.medium_dialog {
+  width: 600px;
+}
+
+md-dialog.r_medium_dialog {
+  width: 70%;
+}
+
+md-tabs.stretch-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+  min-height: calc(100vh - 65px);
+}
+
+@media (max-width: 959px) and (min-width: 0) and (orientation: landscape) {
+  .md-toolbar-tools {
+    height: 48px;
+    max-height: 48px;
+  }
+  md-tabs.stretch-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+    min-height: calc(100vh - 49px);
+  }
+}
+@media (max-width: 959px) and (min-width: 0) and (orientation: portrait){
+  .md-toolbar-tools {
+      height: 56px;
+      max-height: 56px;
+  }
+  md-tabs.stretch-tabs:not(.md-no-tab-content):not(.md-dynamic-height) {
+    min-height: calc(100vh - 57px);
+  }
+}
+
+.fixed-bottom-footer {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	height: 52px;
+	background-color: white;
+	z-index: 3;
+}
+
+.hide-validation-error .md-errors-spacer { display: none; }
+
+.custom-datepicker .custom-label {
+    position: absolute;
+    font-size: 13px;
+    color: rgba(0,0,0,0.38);
+    padding-top: 3px;
+    padding-left: 1px;
+}
+
+.custom-ethnicity,
+.custom-language 
+{
+  position: relative;
+  margin: 18px 0 49px;
+  /* width: 170px; */
+}
+
+.custom-ethnicity md-autocomplete input:not(.md-input), 
+.custom-language  md-autocomplete input:not(.md-input) 
+{
+  font-size: 16px;
+  /* bottom: -12px;
+  position: absolute; */
+}
+
+.custom-ethnicity .md-chips-messages,
+.custom-language  .md-chips-messages 
+{
+  color: #dd2c00;
+  position: absolute;
+  bottom: -16px;
+  order: 4;
+  overflow: hidden; }
+
+.custom-ethnicity .md-chips-messages [ng-message] ,
+.custom-language .md-chips-messages [ng-message] 
+{
+  font-size: 12px;
+  line-height: 14px;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 5px; }
+
+.custom-ethnicity p.note ,
+.custom-language p.note 
+{
+  font-size: 12px; }
+
+.custom-ethnicity md-chips.md-default-theme .md-chips.md-readonly, 
+.custom-language  md-chips.md-default-theme .md-chips.md-readonly, 
+.custom-ethnicity md-chips .md-chips.md-readonly,
+.custom-language  md-chips .md-chips.md-readonly
+{
+  box-shadow: 0 0px rgba(0,0,0,0);
+  color: rgba(0,0,0,0.38);
+  background-position: bottom -1px left 0;
+  background-size: 4px 2px;
+  background-repeat: repeat-x;
+  background-image: linear-gradient(90deg,rgba(0,0,0,0.38) 0,rgba(0,0,0,0.38) 33%,transparent 0);
+  background-image: -ms-linear-gradient(left,transparent 0,rgba(0,0,0,0.38) 100%);
+}
+
+.custom-ethnicity md-chips.md-default-theme .md-chips:not(.md-readonly), 
+.custom-language  md-chips.md-default-theme .md-chips:not(.md-readonly), 
+.custom-ethnicity md-chips .md-chips:not(.md-readonly),
+.custom-language  md-chips .md-chips:not(.md-readonly)
+{ 
+  box-shadow: 0 1px rgba(0,0,0,0.12);
+}
+
+.custom-ethnicity .md-chips ,
+.custom-language  .md-chips 
+{
+  /* padding: 1px 0 8px 3px; */
+  padding: 2px;
+  /* margin: 0px 0px 36px; */
+  height: 41px;
+}
+
+.custom-ethnicity .custom-label ,
+.custom-language  .custom-label 
+{
+  position: absolute;
+  font-size: 13px;
+  color: rgba(0,0,0,0.38);
+  padding-top: 3px;
+  padding-left: 1px;
+  top: -10px;
+}
+
+/* .custom-ethnicity .temp-placeholder,
+.custom-ethnicity .md-chips {
+  position: absolute;
+} */
+
+tr.clickable {
+  cursor: pointer;
+}
+/* 
+.custom-ethnicity md-chips-wrap.md-chips {
+  display: flex;
+  flex-wrap: wrap;
+}
+.custom-ethnicity md-chips-wrap > .md-chip-input-container {
+  order: -1;
+} */
