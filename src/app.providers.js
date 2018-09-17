@@ -34,7 +34,7 @@ function tokenChecker($rootScope, $state, $window, AUTH_EVENTS, AuthService, nav
 					// user is not logged in
 					$rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
 					$window.localStorage.removeItem('token');
-					$state.transitionTo('login');
+					$state.transitionTo('home');
 					event.preventDefault();
 				}
 			}else if(AuthService.isAuthenticated() && $window.localStorage.token != null && next.name === 'login'){

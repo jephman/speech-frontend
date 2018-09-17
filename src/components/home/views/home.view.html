@@ -1,16 +1,3 @@
-<section layout="row" flex>
-  <section class="bg-clr" flex>
-    home
-    <div ng-if="currentUser">Welcome, {{ currentUser.name }}</div>
-    <div ng-if="isAuthorized(userRoles.admin)">You're admin.</div>
-    <div ng-if="isAuthorized(userRoles.manager)">You're manager.</div>
-    <div ng-if="isAuthorized(userRoles.user)">You're user.</div>
-
-  <section class="dashboard-shell" layout="row" flex>
-    <main ui-view="main-panel" class="main-panel-holder" flex>
-      <ui-view></ui-view>
-    </main>
-  </section>
-
-  </section>
-</section>
+<main ui-view="main-panel" class="main-panel-holder" flex>
+  <ui-view></ui-view>
+</main>

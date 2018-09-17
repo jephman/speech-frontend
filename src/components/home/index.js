@@ -4,10 +4,10 @@ import homeController from './home.controller';
 import homeService from './home.service';
 import homeState from './home.state';
 
-import signup from './modules/signup'
+import index from './modules/index'
 
 export default angular.module('page.home',[
-  signup
+  index
 ])
 .controller('homeController', homeController)
 .factory('homeService', homeService)

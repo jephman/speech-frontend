@@ -4,6 +4,7 @@ function State($stateProvider, $urlRouterProvider, USER_ROLES) {
 	'ngInject';
 	$stateProvider
 	.state('main.home', {
+    abstract    : true,
     url         : '/home',
     name        : 'home',
     data        : { 
