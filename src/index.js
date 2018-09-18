@@ -37,6 +37,7 @@ import User from './components/user'
 
 import customDate from './shared/custom.date.directive';
 import customCompareTo from './shared/custom.compareTo.directive';
+import customFileUpload from './shared/custom.file.upload.directive';
 
 var requires = [
     ngMaterial,
@@ -59,6 +60,7 @@ var requires = [
     appProviders,
     customDate,
     customCompareTo,
+    customFileUpload,
     
     Login,
     Main,

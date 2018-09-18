@@ -1,3 +1,48 @@
-<section flex layout="row" layout-align="center">
-  Home
+<section flex layout="column" layout-align="center">
+  <form name="uploadFileForm" ng-submit="vm.submit(uploadFileForm, vm.formdata)">
+    <md-card>
+      <md-card-title>
+        <md-card-title-text>
+          <span class="md-headline">Upload File</span>
+          <!-- <label for="file-upload" class="md-button md-raised md-primary">Choose Files</label> -->
+        </md-card-title-text>
+      </md-card-title>
+      <md-card-content layout="column">
+        <md-input-container flex>
+          <label>File Name</label>
+          <input name="name" type="text" ng-model="vm.formdata.name" ng-required="true" flex/>
+          <div class="errors" ng-messages="uploadFileForm.name.$error">
+              <div ng-message="required">Required</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex md-no-float>
+          <input id="file-upload" name="file" type="file" custom-file-model="vm.formdata.file" ng-required="true" flex/>
+          <div class="errors" ng-messages="uploadFileForm.file.$error">
+              <div ng-message="required">Required</div>
+          </div>
+        </md-input-container>
+        <md-input-container flex>
+          <label class="">Script</label>
+          <textarea name="script" type="text-area" ng-model="vm.formdata.script" md-maxlength="10000" flex > 
+          </textarea> 
+          <div class="errors" ng-messages="uploadFileForm.script.$error">
+              <div ng-message="required">Required</div>
+              <div ng-message="md-maxlength">Script too long</div>
+          </div>
+        </md-input-container>
+      </md-card-content>
+      <md-card-actions layout="row" layout-align="center center">
+        <md-button type="submit" ng-disabled="">Upload</md-button>
+      </md-card-actions>
+    </md-card>
+  </form>
+  <md-input-container flex>
+    <label class="">Transcription</label>
+    <textarea ng-model="vm.result" ng-readonly="true" rows="10" flex></textarea>
+    </textarea> 
+    <div class="errors" ng-messages="uploadFileForm.script.$error">
+        <div ng-message="required">Required</div>
+        <div ng-message="md-maxlength">Script too long</div>
+    </div>
+  </md-input-container>
 </section>

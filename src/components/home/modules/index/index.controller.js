@@ -1,9 +1,8 @@
 function Controller($q, $state, $http, $injector, $scope, $timeout, homeIndexService) {
   'ngInject';
   var vm = this;
-  vm.signup = signup;
-  vm.SubTitle = $state.current.data.subTitle;
-  // activate();
+  
+  activate();
 
   function activate() {
     // var promises = [get_platform_stats_by_type()];
@@ -12,10 +11,11 @@ function Controller($q, $state, $http, $injector, $scope, $timeout, homeIndexSer
     //   console.log('Activated Dashboard View');
     // });
   }
-  function signup (form, formData){
-    homeIndexService.signup(formData)
+  vm.submit = submit;
+  function submit (form, formData){
+    homeIndexService.uploadMedia(formData)
     .then(data => {
-      console.log(data);
+      vm.result = JSON.parse(JSON.stringify(data.transcript));
     })
     .catch(err => {
       console.log(err);

@@ -2,17 +2,19 @@ function Service($http, $q, CONFIG) {
   'ngInject';  
   
   return {
-    signup : signup
+    uploadMedia : uploadMedia
   };
 
-  function signup(data) {
+  function uploadMedia(data) {
+    var fd = new FormData();
+    fd.append('name', data.name);
+    fd.append('file', data.file);
+    fd.append('script', data.script);
+
     let deffered = $q.defer();
-    $http({
-      method: 'POST',
-      url   : `${CONFIG.api_base_url}/user`,
-      data  : data,
-      headers : { 'Content-Type' : 'application/json'},
-      cache : false
+    $http.post(`${CONFIG.api_base_url}/media/upload`, fd, {
+      transformRequest: angular.identity,
+      headers: {'Content-Type': undefined}
     })
     .then(fetchTokenComplete) 
     .catch(fetchTokenFailed);
