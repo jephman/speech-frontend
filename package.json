@@ -9,6 +9,7 @@
     "deploy": "gh-pages-deploy"
   },
   "gh-pages-deploy": {
+    "staticpath": "dist",
     "prep": [
       "build"
     ],
