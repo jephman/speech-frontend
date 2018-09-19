@@ -5,7 +5,16 @@
   "main": "index.js",
   "scripts": {
     "build": "export NODE_ENV=production&& ./node_modules/.bin/webpack --progress",
-    "dev": "export NODE_ENV=development&& node dev-server.js"
+    "dev": "export NODE_ENV=development&& node dev-server.js",
+    "deploy": "gh-pages-deploy"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "build"
+    ],
+    "commit": "a custom commit message",
+    "noprompt": false
   },
   "author": "",
   "license": "ISC",
