@@ -2,6 +2,7 @@
   "name": "client",
   "version": "1.0.0",
   "description": "(Sept 19 2018)",
+  "homepage": "https://jephman.github.io/speech-frontend",
   "scripts": {
     "build": "export NODE_ENV=production&& ./node_modules/.bin/webpack --progress",
     "dev": "export NODE_ENV=development&& node dev-server.js",
