@@ -7,14 +7,6 @@
     "dev": "export NODE_ENV=development&& node dev-server.js",
     "deploy": "gh-pages-deploy"
   },
-  "gh-pages-deploy": {
-    "staticpath": "dist",
-    "prep": [
-      "build"
-    ],
-    "commit": "a custom commit message",
-    "noprompt": false
-  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
@@ -29,6 +21,7 @@
     "css-loader": "^0.28.0",
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^0.11.1",
+    "gh-pages-deploy": "^0.4.2",
     "hard-source-webpack-plugin": "^0.7.5",
     "html-loader": "^0.4.5",
     "html-webpack-inline-svg-plugin": "^0.2.2",
