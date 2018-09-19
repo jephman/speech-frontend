@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 const CONFIG = {
-  api_base_url: 'http://localhost:2001/api'
+  api_base_url: 'https://audio-transcription-app.herokuapp.com/api'
 }
 
 const AUTH_EVENTS = {
