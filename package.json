@@ -1,8 +1,7 @@
 {
   "name": "client",
-  "version": "4.0.0",
-  "description": "(Jul 13 2018)",
-  "main": "index.js",
+  "version": "1.0.0",
+  "description": "(Sept 19 2018)",
   "scripts": {
     "build": "export NODE_ENV=production&& ./node_modules/.bin/webpack --progress",
     "dev": "export NODE_ENV=development&& node dev-server.js",
