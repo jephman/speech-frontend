@@ -40,7 +40,7 @@ let entry = PRODUCTION
   }
   : [
     // "./src/index.js",
-    "webpack-dev-server/client?http://localhost:8080",
+    "webpack-dev-server/client?http://localhost:8081",
     "webpack/hot/dev-server",
     path.join(__dirname, 'src/index.js')
   ];
