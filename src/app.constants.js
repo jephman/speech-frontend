@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 const CONFIG = {
-  api_base_url: 'http://localhost:8080/api'
+  api_base_url: 'http://ccengine.io/engine/api'
 }
 
 const AUTH_EVENTS = {
